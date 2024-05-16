@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: summarizer
-  name: summarizer
+    app: tldrwiki
+  name: tldrwiki
 spec:
   initContainers:
   - name: model-file
-    image: MODEL_IMAGE
+    image: quay.io/ai-lab/granite-7b-lab:latest
     command: ['/usr/bin/install', "/model/model.file", "/shared/"]
     volumeMounts:
     - name: model-file
@@ -16,8 +16,8 @@ spec:
   - env:
     - name: MODEL_ENDPOINT
       value: http://0.0.0.0:8001
-    image: APP_IMAGE
-    name: summarizer-inference
+    image: quay.io/vrutkovs/tldrwiki:latest
+    name: tldrwiki-inference
     ports:
     - containerPort: 8501
       hostPort: 8501
@@ -30,8 +30,8 @@ spec:
       value: 8001
     - name: MODEL_PATH
       value: /model/model.file
-    image: SERVER_IMAGE
-    name: summarizer-model-service
+    image: quay.io/ai-lab/llamacpp_python:latest
+    name: tldrwiki-model-service
     ports:
     - containerPort: 8001
       hostPort: 8001
