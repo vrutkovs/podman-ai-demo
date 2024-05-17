@@ -37,7 +37,7 @@ spec:
           value: "8001"
         - name: MODEL_PATH
           value: /model/model.file
-        image: quay.io/vrutkovs/llamacpp_cuda:latest
+        image: quay.io/vrutkovs/tldrwiki:llamacpp_cuda
         name: tldrwiki-model-service
         ports:
         - containerPort: 8001
