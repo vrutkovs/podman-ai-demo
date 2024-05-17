@@ -37,6 +37,8 @@ spec:
           value: "8001"
         - name: MODEL_PATH
           value: /model/model.file
+        - name: GPU_LAYERS
+          value: "33"
         image: quay.io/vrutkovs/tldrwiki:llamacpp_cuda
         name: tldrwiki-model-service
         ports:
