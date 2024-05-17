@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: tldrwiki
+  labels:
+    app: tldrwiki
+spec:
+  host: tldrwiki.apps.vrutkovs-prod-eu.devcluster.openshift.com
+  path: /
+  to:
+    kind: Service
+    name: tldrwiki
+    weight: 100
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None

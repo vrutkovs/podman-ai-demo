@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tldrwiki
+  name: tldrwiki
+spec:
+  selector:
+    matchLabels:
+      app: tldrwiki
+  template:
+    metadata:
+      labels:
+        app: tldrwiki
+    spec:
+      initContainers:
+      - name: model-file
+        image: quay.io/ai-lab/granite-7b-lab:latest
+        command: ['/usr/bin/install', "/model/model.file", "/shared/"]
+        volumeMounts:
+        - name: model-file
+          mountPath: /shared
+      containers:
+      - env:
+        - name: MODEL_ENDPOINT
+          value: http://0.0.0.0:8001
+        image: quay.io/vrutkovs/tldrwiki:latest
+        name: tldrwiki-inference
+        ports:
+        - containerPort: 8501
+        securityContext:
+          runAsNonRoot: true
+      - env:
+        - name: HOST
+          value: 0.0.0.0
+        - name: PORT
+          value: "8001"
+        - name: MODEL_PATH
+          value: /model/model.file
+        image: quay.io/vrutkovs/llamacpp_cuda:latest
+        name: tldrwiki-model-service
+        ports:
+        - containerPort: 8001
+        securityContext:
+          runAsNonRoot: true
+        volumeMounts:
+        - name: model-file
+          mountPath: /model
+      volumes:
+      - name: model-file
+        emptyDir: {}
