@@ -39,7 +39,7 @@ spec:
           value: /model/model.file
         - name: GPU_LAYERS
           value: "33"
-        image: quay.io/vrutkovs/tldrwiki:llamacpp_cuda
+        image: quay.io/ai-lab/llamacpp-python-cuda:latest
         name: tldrwiki-model-service
         ports:
         - containerPort: 8001
