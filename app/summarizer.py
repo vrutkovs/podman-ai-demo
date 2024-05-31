@@ -104,7 +104,7 @@ if query:
         "Given the new context, refine the original summary"
         "If the context isn't useful, return the original summary."
         "Only use bullet points."
-        "Dont ever go beyond 10 bullet points."
+        "Dont ever go beyond 5 bullet points."
     )
     text = None
     try:
