@@ -35,16 +35,18 @@ For companies and organisations interested in supporting our conference and gain
     Enabling people interested in modern IT technologies to meet and share their knowledge
     Introducing the projects included in the CNCF landscape, Kubernetes is one of them
 
-Who is the primary audience for this event?
+# Who is the primary audience for this event?
 
 The event is for all architects, CTOs, IT managers, developers, DevOps, administrators, SREs, students and anyone interested in learning more about the various CNCF projects, technologies and their architecture. Of course, there will be an opportunity to discuss hot topics with professionals with a lot of hands-on experience. Visitors will get a chance to get to know the culture around DevOps better and can join a large Slovak and Czech community with global reach.
-Code of Ethics
+
+# Code of Ethics
 
 The conference, as well as our association, stands on the solid foundations of the Linux Foundation. Its code of conduct is also one of the cornerstones of our organization.
 Sessions and workshop will be in 3 languages: CZ / SK / EN
 
 Sessions and workshops will be held in several lecture rooms in English, Slovak and Czech. We intend to stream and record all the sessions. 
-Venue
+
+# Venue
 
 The entire conference area is wheelchair accessible. If you need any assistance, please let us know in advance and we will be happy to help you.
 Stay updated about the event and help us promote it
